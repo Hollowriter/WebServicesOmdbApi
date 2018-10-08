@@ -1,0 +1,9 @@
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\bin\Debug\Forms.exe.config
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\bin\Debug\Forms.exe
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\bin\Debug\Forms.pdb
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.exe
+D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.pdb
