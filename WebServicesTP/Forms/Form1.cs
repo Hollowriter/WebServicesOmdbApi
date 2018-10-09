@@ -20,30 +20,49 @@ namespace Forms
         private void button1_Click(object sender, EventArgs e)
         {
             RestClientClass rClient = new RestClientClass();
-            if (textType.Text == null && textYear.Text == null)
+            rClient.title = null;
+            rClient.type = null;
+            rClient.year = null;
+            if (textTitle.Text != null && textType.Text == null && textYear.Text == null)
             {
                 rClient.title = "t=" + textTitle.Text;
                 rClient.endPoint = rClient.key + rClient.title;
             }
-            if (textType.Text != null && textYear.Text == null)
+            if (textTitle.Text != null && textType.Text != null && textYear.Text == null)
             {
                 rClient.title = "t=" + textTitle.Text;
                 rClient.type = "&type=" + textType.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type;
             }
-            if (textType.Text == null && textYear.Text != null)
+            if (textTitle.Text != null && textType.Text == null && textYear.Text != null)
             {
                 rClient.title = "t=" + textTitle.Text;
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.year;
             }
-            if (textType.Text != null && textYear.Text != null)
+            if (textTitle.Text != null && textType.Text != null && textYear.Text != null)
             {
                 rClient.title = "t=" + textTitle.Text;
                 rClient.type = "&type=" + textType.Text;
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
             }
+            /*if (textTitle.Text == null && textType.Text != null && textYear.Text != null)
+            {
+                rClient.title = "type=" + textType.Text;
+                rClient.year = "&y=" + textYear.Text;
+                rClient.endPoint = rClient.key + rClient.type + rClient.year;
+            }
+            if (textTitle.Text == null && textType.Text != null && textYear.Text == null)
+            {
+                rClient.title = "type=" + textType.Text;
+                rClient.endPoint = rClient.key + rClient.type;
+            }
+            if (textTitle.Text == null && textType.Text == null && textYear.Text != null)
+            {
+                rClient.title = "y=" + textYear.Text;
+                rClient.endPoint = rClient.key + rClient.year;
+            }*/ // Segun el sitio de Ombdapi, tener la ID de Imdb o el titulo al menos es necesario
             string theResponse = string.Empty;
             theResponse = rClient.makeRequest();
             debugOutput(theResponse);

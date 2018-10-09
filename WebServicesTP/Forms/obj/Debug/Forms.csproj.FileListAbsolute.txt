@@ -7,3 +7,12 @@ D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resourc
 D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
 D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.exe
 D:\Desktop\CosoDePractica\WebServicesTP\Forms\obj\Debug\Forms.pdb
+D:\Desktop\Repo2\WebServicesTP\Forms\bin\Debug\Forms.exe.config
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.exe
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.pdb
+D:\Desktop\Repo2\WebServicesTP\Forms\bin\Debug\Forms.exe
+D:\Desktop\Repo2\WebServicesTP\Forms\bin\Debug\Forms.pdb
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
+D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
