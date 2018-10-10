@@ -16,3 +16,13 @@ D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyRefere
 D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
 D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
 D:\Desktop\Repo2\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe.config
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.pdb
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.exe
+C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb

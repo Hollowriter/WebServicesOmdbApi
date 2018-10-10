@@ -25,24 +25,24 @@ namespace Forms
             rClient.year = null;
             if (textTitle.Text != null && textType.Text == null && textYear.Text == null)
             {
-                rClient.title = "t=" + textTitle.Text;
+                rClient.title = "s=" + textTitle.Text;
                 rClient.endPoint = rClient.key + rClient.title;
             }
             if (textTitle.Text != null && textType.Text != null && textYear.Text == null)
             {
-                rClient.title = "t=" + textTitle.Text;
+                rClient.title = "s=" + textTitle.Text;
                 rClient.type = "&type=" + textType.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type;
             }
             if (textTitle.Text != null && textType.Text == null && textYear.Text != null)
             {
-                rClient.title = "t=" + textTitle.Text;
+                rClient.title = "s=" + textTitle.Text;
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.year;
             }
             if (textTitle.Text != null && textType.Text != null && textYear.Text != null)
             {
-                rClient.title = "t=" + textTitle.Text;
+                rClient.title = "s=" + textTitle.Text;
                 rClient.type = "&type=" + textType.Text;
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
@@ -84,6 +84,11 @@ namespace Forms
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textTitle_TextChanged(object sender, EventArgs e)
         {
 
         }

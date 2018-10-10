@@ -45,6 +45,7 @@
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(219, 20);
             this.textTitle.TabIndex = 0;
+            this.textTitle.TextChanged += new System.EventHandler(this.textTitle_TextChanged);
             // 
             // textResponse
             // 
