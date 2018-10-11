@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Forms
 {
@@ -47,25 +48,9 @@ namespace Forms
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
             }
-            /*if (textTitle.Text == null && textType.Text != null && textYear.Text != null)
-            {
-                rClient.title = "type=" + textType.Text;
-                rClient.year = "&y=" + textYear.Text;
-                rClient.endPoint = rClient.key + rClient.type + rClient.year;
-            }
-            if (textTitle.Text == null && textType.Text != null && textYear.Text == null)
-            {
-                rClient.title = "type=" + textType.Text;
-                rClient.endPoint = rClient.key + rClient.type;
-            }
-            if (textTitle.Text == null && textType.Text == null && textYear.Text != null)
-            {
-                rClient.title = "y=" + textYear.Text;
-                rClient.endPoint = rClient.key + rClient.year;
-            }*/ // Segun el sitio de Ombdapi, tener la ID de Imdb o el titulo al menos es necesario
-            string theResponse = string.Empty;
-            theResponse = rClient.makeRequest();
-            debugOutput(theResponse);
+            //Movie theResponse = new Movie();
+            Movie theResponse = rClient.makeRequest();
+            debugOutput(theResponse.Datos.Title);
         }
 
         private void debugOutput(string theOutputText)

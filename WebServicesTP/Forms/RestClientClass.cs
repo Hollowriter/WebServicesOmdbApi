@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace Forms
 {
@@ -32,9 +33,10 @@ namespace Forms
             httpMethod = HttpThings.GET;
         }
 
-        public string makeRequest()
+        public Movie makeRequest()
         {
-            string theResponse = string.Empty;
+            // var theResponse = string.Empty;
+            Movie laPelicula; // No importa que sea una serie
             HttpWebRequest theRequest = (HttpWebRequest)WebRequest.Create(endPoint);
             theRequest.Method = httpMethod.ToString();
             using (HttpWebResponse webResponse = (HttpWebResponse)theRequest.GetResponse())
@@ -49,12 +51,14 @@ namespace Forms
                     {
                         using (StreamReader theReader = new StreamReader(responseStream))
                         {
-                            theResponse = theReader.ReadToEnd();
+                            var theResponse = theReader.ReadToEnd();
+                            laPelicula = JsonConvert.DeserializeObject<Movie>(theResponse); // Revisar deserealizacion
+                            return laPelicula;
                         }
                     }
                 }
             }
-            return theResponse;
+            return new Movie();
         }
     }
 }
