@@ -50,7 +50,7 @@ namespace Forms
             }
             //Movie theResponse = new Movie();
             Movie theResponse = rClient.makeRequest();
-            debugOutput(theResponse.Datos.Title);
+            debugOutput(theResponse.Search[0].Title);
         }
 
         private void debugOutput(string theOutputText)

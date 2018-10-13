@@ -28,3 +28,12 @@ C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\D
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.CopyComplete
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe.config
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.exe
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.pdb
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
+D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache

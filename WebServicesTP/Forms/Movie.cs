@@ -8,6 +8,8 @@ namespace Forms
 {
     public class Movie
     {
-        public Data Datos { get; set; }
+        public Data[] Search { get; set; }
+        public string totalResults { get; set; }
+        public string Response { get; set; }
     }
 }
