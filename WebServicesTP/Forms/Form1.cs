@@ -50,7 +50,13 @@ namespace Forms
             }
             //Movie theResponse = new Movie();
             Movie theResponse = rClient.makeRequest();
-            debugOutput(theResponse.Search[0].Title);
+            for (int i = 0; i < theResponse.Search.Length; i++)
+            {
+                debugOutput("Title: " + theResponse.Search[i].Title + '\n');
+                debugOutput("Type: " + theResponse.Search[i].Type + '\n');
+                debugOutput("Year: " + theResponse.Search[i].Year + '\n');
+                debugOutput(" " + '\n');
+            }
         }
 
         private void debugOutput(string theOutputText)
