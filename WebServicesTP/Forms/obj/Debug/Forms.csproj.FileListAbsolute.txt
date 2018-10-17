@@ -27,7 +27,6 @@ C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\D
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.exe
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb
 C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Administrador\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.CopyComplete
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe.config
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.exe
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb

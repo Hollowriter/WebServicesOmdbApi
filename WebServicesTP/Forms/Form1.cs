@@ -61,6 +61,7 @@ namespace Forms
 
         private void debugOutput(string theOutputText)
         {
+            textResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; 
             try
             {
                 System.Diagnostics.Debug.Write(theOutputText + Environment.NewLine);
