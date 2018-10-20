@@ -37,6 +37,7 @@
             this.textType = new System.Windows.Forms.TextBox();
             this.Year = new System.Windows.Forms.Label();
             this.textYear = new System.Windows.Forms.TextBox();
+            this.listResponse = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // textTitle
@@ -49,7 +50,7 @@
             // 
             // textResponse
             // 
-            this.textResponse.Location = new System.Drawing.Point(84, 131);
+            this.textResponse.Location = new System.Drawing.Point(88, 131);
             this.textResponse.Multiline = true;
             this.textResponse.Name = "textResponse";
             this.textResponse.Size = new System.Drawing.Size(275, 150);
@@ -116,11 +117,20 @@
             this.textYear.Size = new System.Drawing.Size(219, 20);
             this.textYear.TabIndex = 8;
             // 
+            // listResponse
+            // 
+            this.listResponse.FormattingEnabled = true;
+            this.listResponse.Location = new System.Drawing.Point(381, 131);
+            this.listResponse.Name = "listResponse";
+            this.listResponse.Size = new System.Drawing.Size(250, 147);
+            this.listResponse.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 422);
+            this.Controls.Add(this.listResponse);
             this.Controls.Add(this.textYear);
             this.Controls.Add(this.Year);
             this.Controls.Add(this.textType);
@@ -148,6 +158,7 @@
         private System.Windows.Forms.TextBox textType;
         private System.Windows.Forms.Label Year;
         private System.Windows.Forms.TextBox textYear;
+        private System.Windows.Forms.ListBox listResponse;
     }
 }
 

@@ -36,3 +36,12 @@ D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csprojRe
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
 D:\Desktop\Repo2\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe.config
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.exe
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.pdb
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.exe
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\bin\Debug\Forms.pdb
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Form1.resources
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.Properties.Resources.resources
+D:\Desktop\Repo\WebServicesOmdbApi\WebServicesTP\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache

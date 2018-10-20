@@ -52,6 +52,7 @@ namespace Forms
             Movie theResponse = rClient.makeRequest();
             for (int i = 0; i < theResponse.Search.Length; i++)
             {
+                listResponse.Items.Add(theResponse.Search[i].Title);
                 debugOutput("Title: " + theResponse.Search[i].Title + '\n');
                 debugOutput("Type: " + theResponse.Search[i].Type + '\n');
                 debugOutput("Year: " + theResponse.Search[i].Year + '\n');
