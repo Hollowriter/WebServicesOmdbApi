@@ -124,6 +124,7 @@
             this.listResponse.Name = "listResponse";
             this.listResponse.Size = new System.Drawing.Size(250, 147);
             this.listResponse.TabIndex = 9;
+            this.listResponse.SelectedIndexChanged += new System.EventHandler(this.listResponse_SelectedIndexChanged);
             // 
             // Form1
             // 

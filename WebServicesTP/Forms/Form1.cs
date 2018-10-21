@@ -85,5 +85,11 @@ namespace Forms
         {
 
         }
+
+        private void listResponse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Form2 cosito = new Form2();
+            cosito.ShowDialog();
+        }
     }
 }
