@@ -60,5 +60,32 @@ namespace Forms
             }
             return new Movie();
         }
+        public MovieDetail secondRequest()
+        {
+            // var theResponse = string.Empty;
+            MovieDetail laPelicula; // No importa que sea una serie
+            HttpWebRequest theRequest = (HttpWebRequest)WebRequest.Create(endPoint);
+            theRequest.Method = httpMethod.ToString();
+            using (HttpWebResponse webResponse = (HttpWebResponse)theRequest.GetResponse())
+            {
+                if (webResponse.StatusCode != HttpStatusCode.OK)
+                {
+                    throw new ApplicationException("error code: " + webResponse.StatusCode.ToString());
+                }
+                using (Stream responseStream = webResponse.GetResponseStream())
+                {
+                    if (responseStream != null)
+                    {
+                        using (StreamReader theReader = new StreamReader(responseStream))
+                        {
+                            var theResponse = theReader.ReadToEnd();
+                            laPelicula = JsonConvert.DeserializeObject<MovieDetail>(theResponse); // Revisar deserealizacion
+                            return laPelicula;
+                        }
+                    }
+                }
+            }
+            return new MovieDetail();
+        }
     }
 }

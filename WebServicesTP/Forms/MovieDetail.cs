@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Forms
 {
-
-    public class Rootobject
+    class MovieDetail
     {
         public string Title { get; set; }
         public string Year { get; set; }
@@ -23,7 +22,7 @@ namespace Forms
         public string Country { get; set; }
         public string Awards { get; set; }
         public string Poster { get; set; }
-        public Rating[] Ratings { get; set; }
+        public Ratings[] Rateos { get; set; }
         public string Metascore { get; set; }
         public string imdbRating { get; set; }
         public string imdbVotes { get; set; }
@@ -32,11 +31,4 @@ namespace Forms
         public string totalSeasons { get; set; }
         public string Response { get; set; }
     }
-
-    public class Rating
-    {
-        public string Source { get; set; }
-        public string Value { get; set; }
-    }
-
 }

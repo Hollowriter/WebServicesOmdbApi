@@ -13,14 +13,17 @@ namespace Forms
 {
     public partial class Form1 : Form
     {
+        Movie theResponse;
         public Form1()
         {
             InitializeComponent();
+            theResponse = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             RestClientClass rClient = new RestClientClass();
+            theResponse = null;
             rClient.title = null;
             rClient.type = null;
             rClient.year = null;
@@ -49,7 +52,7 @@ namespace Forms
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
             }
             //Movie theResponse = new Movie();
-            Movie theResponse = rClient.makeRequest();
+            /*Movie*/ theResponse = rClient.makeRequest();
             for (int i = 0; i < theResponse.Search.Length; i++)
             {
                 listResponse.Items.Add(theResponse.Search[i].Title);
@@ -89,6 +92,7 @@ namespace Forms
         private void listResponse_SelectedIndexChanged(object sender, EventArgs e)
         {
             Form2 cosito = new Form2();
+            cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString());
             cosito.ShowDialog();
         }
     }
