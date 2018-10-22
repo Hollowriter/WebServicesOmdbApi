@@ -24,7 +24,27 @@ namespace Forms
             MovieDetail theSecondResponse = secondCall.secondRequest();
             debugOutput("Title: " + theSecondResponse.Title + "\n");
             debugOutput("Year: " + theSecondResponse.Year + "\n");
+            debugOutput("Type: " + theSecondResponse.Type + "\n");
+            debugOutput("Seasons: " + theSecondResponse.totalSeasons + "\n");
             debugOutput("Rated: " + theSecondResponse.Rated + "\n");
+            debugOutput("Released: " + theSecondResponse.Released + "\n");
+            debugOutput("Runtime: " + theSecondResponse.Runtime + "\n");
+            debugOutput("Genre: " + theSecondResponse.Genre + "\n");
+            debugOutput("Director: " + theSecondResponse.Director + "\n");
+            debugOutput("Writer: " + theSecondResponse.Writer + "\n");
+            debugOutput("Actors: " + theSecondResponse.Actors + "\n");
+            debugOutput("Plot: " + theSecondResponse.Plot + "\n");
+            debugOutput("Language: " + theSecondResponse.Language + "\n");
+            debugOutput("Country: " + theSecondResponse.Country + "\n");
+            debugOutput("Awards: " + theSecondResponse.Awards + "\n");
+            debugOutput("Ratings:\n");
+            /*for (int i = 0; i < theSecondResponse.Rateos.Length; i++)
+            {
+                debugOutput(" Value:" + theSecondResponse.Rateos[i].Value + "\n Source: " + theSecondResponse.Rateos[i].Value);
+            }*/ // Esto tira null
+            debugOutput("\n");
+            debugOutput("ImdbRating: " + theSecondResponse.imdbRating + "\n");
+            debugOutput("ImdbVotes: " + theSecondResponse.imdbVotes + "\n");
         }
         private void debugOutput(string theOutputText)
         {
