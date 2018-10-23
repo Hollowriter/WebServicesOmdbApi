@@ -45,7 +45,9 @@ namespace Forms
             debugOutput("\n");
             debugOutput("ImdbRating: " + theSecondResponse.imdbRating + "\n");
             debugOutput("ImdbVotes: " + theSecondResponse.imdbVotes + "\n");
+            outputImage(theSecondResponse.Poster);
         }
+
         private void debugOutput(string theOutputText)
         {
             secondResponseBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -60,6 +62,11 @@ namespace Forms
             {
                 System.Diagnostics.Debug.Write(ex.Message, ToString() + Environment.NewLine);
             }
+        }
+
+        private void outputImage(string theUrl)
+        {
+            posterBox.ImageLocation = theUrl;
         }
     }
 }
