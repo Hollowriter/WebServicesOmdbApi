@@ -60,6 +60,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageDetail.cs" />
     <Compile Include="jsonobjectexample.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="MovieDetail.cs" />

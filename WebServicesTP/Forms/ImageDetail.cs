@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Forms
 {
-
-    public class Rootobject
+    class ImageDetail
     {
         public string FileName { get; set; }
         public int FileSize { get; set; }
@@ -16,5 +15,4 @@ namespace Forms
         public int Width { get; set; }
         public string Data { get; set; }
     }
-
 }
