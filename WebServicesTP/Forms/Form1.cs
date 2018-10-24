@@ -24,6 +24,7 @@ namespace Forms
         {
             RestClientClass rClient = new RestClientClass();
             theResponse = null;
+            listResponse.Items.Clear();
             rClient.title = null;
             rClient.type = null;
             rClient.year = null;
