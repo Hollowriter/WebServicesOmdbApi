@@ -54,6 +54,7 @@ namespace Forms
             }
             //Movie theResponse = new Movie();
             /*Movie*/ theResponse = rClient.makeRequest();
+            textResponse.Clear();
             for (int i = 0; i < theResponse.Search.Length; i++)
             {
                 listResponse.Items.Add(theResponse.Search[i].Title);
