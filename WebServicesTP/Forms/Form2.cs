@@ -68,5 +68,10 @@ namespace Forms
         {
             posterBox.ImageLocation = theUrl;
         }
+
+        private void secondResponseBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

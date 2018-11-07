@@ -1,0 +1,4 @@
+1.indicador de paginas 1/x
+2.boton de siguiente y anterior (desactivados en el caso de ultima o primera)
+3.boton de ultima o primera (desactivados """"""""""""""""""""")
+4.Agregarle temporadas

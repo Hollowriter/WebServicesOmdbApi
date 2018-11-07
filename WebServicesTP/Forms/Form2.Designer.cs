@@ -41,6 +41,7 @@
             this.secondResponseBox.Name = "secondResponseBox";
             this.secondResponseBox.Size = new System.Drawing.Size(340, 493);
             this.secondResponseBox.TabIndex = 0;
+            this.secondResponseBox.TextChanged += new System.EventHandler(this.secondResponseBox_TextChanged);
             // 
             // posterBox
             // 
