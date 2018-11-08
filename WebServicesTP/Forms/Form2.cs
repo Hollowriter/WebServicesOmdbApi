@@ -19,6 +19,7 @@ namespace Forms
         public void ShowSelection(string sender2)
         {
             RestClientClass secondCall = new RestClientClass();
+            RestClientImage theImageDetail = new RestClientImage(); // Continuar
             secondCall.title = "t=" + sender2;
             secondCall.endPoint = secondCall.key + secondCall.title;
             MovieDetail theSecondResponse = secondCall.secondRequest();
@@ -67,9 +68,15 @@ namespace Forms
         private void outputImage(string theUrl)
         {
             posterBox.ImageLocation = theUrl;
+            posterBoxDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; // Continuar
         }
 
         private void secondResponseBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }

@@ -30,7 +30,7 @@
         {
             this.secondResponseBox = new System.Windows.Forms.TextBox();
             this.posterBox = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.posterBoxDetail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.posterBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,24 +51,25 @@
             this.posterBox.TabIndex = 1;
             this.posterBox.TabStop = false;
             // 
-            // textBox1
+            // posterBoxDetail
             // 
-            this.textBox1.Location = new System.Drawing.Point(358, 423);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 82);
-            this.textBox1.TabIndex = 2;
+            this.posterBoxDetail.Location = new System.Drawing.Point(358, 423);
+            this.posterBoxDetail.Multiline = true;
+            this.posterBoxDetail.Name = "posterBoxDetail";
+            this.posterBoxDetail.Size = new System.Drawing.Size(282, 82);
+            this.posterBoxDetail.TabIndex = 2;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 517);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.posterBoxDetail);
             this.Controls.Add(this.posterBox);
             this.Controls.Add(this.secondResponseBox);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.posterBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,6 +80,6 @@
 
         private System.Windows.Forms.TextBox secondResponseBox;
         private System.Windows.Forms.PictureBox posterBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox posterBoxDetail;
     }
 }
