@@ -14,11 +14,13 @@ namespace Forms
         public string endPoint { get; set; }
         public string key { get; set; }
         public string responseType { get; set; }
+        public string theUrl { get; set; }
         public HttpThings httpMethod { get; set; }
 
         public RestClientImage()
         {
             endPoint = string.Empty;
+            theUrl = string.Empty;
             key = "https://www.pida.io/data/";
             responseType = "?format=json";
             httpMethod = HttpThings.GET; // Continuar
@@ -29,7 +31,7 @@ namespace Forms
             ImageDetail laImagen;
             HttpWebRequest theRequest = (HttpWebRequest)WebRequest.Create(endPoint);
             theRequest.Method = httpMethod.ToString();
-            using (HttpWebResponse webResponse = (HttpWebResponse)theRequest.GetResponse())
+            using (HttpWebResponse webResponse = (HttpWebResponse)theRequest.GetResponse()) // Error en tiempo de ejecucion
             {
                 if (webResponse.StatusCode != HttpStatusCode.OK)
                 {
@@ -42,7 +44,7 @@ namespace Forms
                         using (StreamReader theReader = new StreamReader(responseStream))
                         {
                             var theResponse = theReader.ReadToEnd();
-                            laImagen = JsonConvert.DeserializeObject<ImageDetail>(theResponse); // Revisar deserealizacion
+                            laImagen = JsonConvert.DeserializeObject<ImageDetail>(theResponse);
                             return laImagen;
                         }
                     }
