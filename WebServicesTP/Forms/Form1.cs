@@ -56,6 +56,9 @@ namespace Forms
             }
             theResponse = rClient.makeRequest();
             // textResponse.Clear();
+            listResponse.Items.Clear();
+            listType.Items.Clear();
+            listYear.Items.Clear();
            for (int i = 0; i < theResponse.Search.Length; i++)
             {
                 listResponse.Items.Add(theResponse.Search[i].Title);
