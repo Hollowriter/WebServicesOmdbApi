@@ -14,10 +14,12 @@ namespace Forms
     public partial class Form1 : Form
     {
         Movie theResponse;
+        bool showing;
         public Form1()
         {
             InitializeComponent();
             theResponse = null;
+            showing = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,20 +54,21 @@ namespace Forms
                 rClient.year = "&y=" + textYear.Text;
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
             }
-            //Movie theResponse = new Movie();
-            /*Movie*/ theResponse = rClient.makeRequest();
-            textResponse.Clear();
-            for (int i = 0; i < theResponse.Search.Length; i++)
+            theResponse = rClient.makeRequest();
+            // textResponse.Clear();
+           for (int i = 0; i < theResponse.Search.Length; i++)
             {
-                listResponse.Items.Add(theResponse.Search[i].Title + "|" + theResponse.Search[i].Type + "|" + theResponse.Search[i].Year);
-                debugOutput("Title: " + theResponse.Search[i].Title + '\n');
+                listResponse.Items.Add(theResponse.Search[i].Title);
+                listType.Items.Add(theResponse.Search[i].Type);
+                listYear.Items.Add(theResponse.Search[i].Year);
+                /*debugOutput("Title: " + theResponse.Search[i].Title + '\n');
                 debugOutput("Type: " + theResponse.Search[i].Type + '\n');
                 debugOutput("Year: " + theResponse.Search[i].Year + '\n');
-                debugOutput(" " + '\n');
+                debugOutput(" " + '\n');*/
             }
         }
 
-        private void debugOutput(string theOutputText)
+        /*private void debugOutput(string theOutputText)
         {
             textResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; 
             try
@@ -79,7 +82,7 @@ namespace Forms
             {
                 System.Diagnostics.Debug.Write(ex.Message, ToString() + Environment.NewLine);
             }
-        }
+        }*/
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -93,9 +96,76 @@ namespace Forms
 
         private void listResponse_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (showing == false)
+            {
+                showing = true;
+                Form2 cosito = new Form2();
+                listType.SelectedIndex = listResponse.SelectedIndex;
+                listYear.SelectedIndex = listResponse.SelectedIndex;
+                cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString());
+                cosito.ShowDialog();
+                showing = false;
+            }
+            else
+            {
+                listType.SelectedIndex = listResponse.SelectedIndex;
+                listYear.SelectedIndex = listResponse.SelectedIndex;
+            }
+        }
+
+        /*private void listType_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Form2 cosito = new Form2();
-            cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString());
+            listResponse.SelectedIndex = listType.SelectedIndex;
+            listYear.SelectedIndex = listType.SelectedIndex;
+            cosito.ShowSelection(theResponse.Search[listType.SelectedIndex].Title.ToString());
             cosito.ShowDialog();
+        }
+        private void listYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Form2 cosito = new Form2();
+            listType.SelectedIndex = listYear.SelectedIndex;
+            listResponse.SelectedIndex = listYear.SelectedIndex;
+            cosito.ShowSelection(theResponse.Search[listYear.SelectedIndex].Title.ToString());
+            cosito.ShowDialog();
+        }*/
+
+        private void listType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (showing == false)
+            {
+                showing = true;
+                Form2 cosito = new Form2();
+                listResponse.SelectedIndex = listType.SelectedIndex;
+                listYear.SelectedIndex = listType.SelectedIndex;
+                cosito.ShowSelection(theResponse.Search[listType.SelectedIndex].Title.ToString());
+                cosito.ShowDialog();
+                showing = false;
+            }
+            else
+            {
+                listResponse.SelectedIndex = listType.SelectedIndex;
+                listYear.SelectedIndex = listType.SelectedIndex;
+            }
+        }
+
+        private void listYear_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (showing == false)
+            {
+                showing = true;
+                Form2 cosito = new Form2();
+                listType.SelectedIndex = listYear.SelectedIndex;
+                listResponse.SelectedIndex = listYear.SelectedIndex;
+                cosito.ShowSelection(theResponse.Search[listYear.SelectedIndex].Title.ToString());
+                cosito.ShowDialog();
+                showing = false;
+            }
+            else
+            {
+                listType.SelectedIndex = listYear.SelectedIndex;
+                listResponse.SelectedIndex = listYear.SelectedIndex;
+            }
         }
     }
 }

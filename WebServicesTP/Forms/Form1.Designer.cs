@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textTitle = new System.Windows.Forms.TextBox();
-            this.textResponse = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
             this.Output = new System.Windows.Forms.Label();
@@ -38,6 +37,8 @@
             this.Year = new System.Windows.Forms.Label();
             this.textYear = new System.Windows.Forms.TextBox();
             this.listResponse = new System.Windows.Forms.ListBox();
+            this.listType = new System.Windows.Forms.ListBox();
+            this.listYear = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // textTitle
@@ -47,14 +48,6 @@
             this.textTitle.Size = new System.Drawing.Size(219, 20);
             this.textTitle.TabIndex = 0;
             this.textTitle.TextChanged += new System.EventHandler(this.textTitle_TextChanged);
-            // 
-            // textResponse
-            // 
-            this.textResponse.Location = new System.Drawing.Point(88, 131);
-            this.textResponse.Multiline = true;
-            this.textResponse.Name = "textResponse";
-            this.textResponse.Size = new System.Drawing.Size(275, 150);
-            this.textResponse.TabIndex = 1;
             // 
             // button1
             // 
@@ -120,17 +113,37 @@
             // listResponse
             // 
             this.listResponse.FormattingEnabled = true;
-            this.listResponse.Location = new System.Drawing.Point(381, 131);
+            this.listResponse.Location = new System.Drawing.Point(84, 131);
             this.listResponse.Name = "listResponse";
-            this.listResponse.Size = new System.Drawing.Size(250, 147);
+            this.listResponse.Size = new System.Drawing.Size(140, 147);
             this.listResponse.TabIndex = 9;
             this.listResponse.SelectedIndexChanged += new System.EventHandler(this.listResponse_SelectedIndexChanged);
+            // 
+            // listType
+            // 
+            this.listType.FormattingEnabled = true;
+            this.listType.Location = new System.Drawing.Point(221, 131);
+            this.listType.Name = "listType";
+            this.listType.Size = new System.Drawing.Size(82, 147);
+            this.listType.TabIndex = 10;
+            this.listType.SelectedIndexChanged += new System.EventHandler(this.listType_SelectedIndexChanged_1);
+            // 
+            // listYear
+            // 
+            this.listYear.FormattingEnabled = true;
+            this.listYear.Location = new System.Drawing.Point(300, 131);
+            this.listYear.Name = "listYear";
+            this.listYear.Size = new System.Drawing.Size(84, 147);
+            this.listYear.TabIndex = 11;
+            this.listYear.SelectedIndexChanged += new System.EventHandler(this.listYear_SelectedIndexChanged_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 422);
+            this.Controls.Add(this.listYear);
+            this.Controls.Add(this.listType);
             this.Controls.Add(this.listResponse);
             this.Controls.Add(this.textYear);
             this.Controls.Add(this.Year);
@@ -139,7 +152,6 @@
             this.Controls.Add(this.Output);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textResponse);
             this.Controls.Add(this.textTitle);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -151,7 +163,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textTitle;
-        private System.Windows.Forms.TextBox textResponse;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label Output;
@@ -160,6 +171,8 @@
         private System.Windows.Forms.Label Year;
         private System.Windows.Forms.TextBox textYear;
         private System.Windows.Forms.ListBox listResponse;
+        private System.Windows.Forms.ListBox listType;
+        private System.Windows.Forms.ListBox listYear;
     }
 }
 
