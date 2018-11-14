@@ -43,7 +43,7 @@ namespace Forms
             debugOutput("ImdbRating: " + theSecondResponse.imdbRating + "\n");
             debugOutput("ImdbVotes: " + theSecondResponse.imdbVotes + "\n");
             outputImage(theSecondResponse.Poster);
-            theImageDetail.theUrl = theSecondResponse.Poster;
+            theImageDetail.theUrl = System.Net.WebUtility.UrlEncode(theSecondResponse.Poster);
             theImageDetail.endPoint = theImageDetail.key + theImageDetail.theUrl + theImageDetail.responseType;
             ImageDetail imageResponse = theImageDetail.makeRequest();
             outputImageInformation("File Type: " + imageResponse.FileType + "\n");
