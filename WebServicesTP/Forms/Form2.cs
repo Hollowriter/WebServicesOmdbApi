@@ -42,74 +42,77 @@ namespace Forms
             debugOutput("\n");
             debugOutput("ImdbRating: " + theSecondResponse.imdbRating + "\n");
             debugOutput("ImdbVotes: " + theSecondResponse.imdbVotes + "\n");
-            outputImage(theSecondResponse.Poster);
-            theImageDetail.theUrl = System.Net.WebUtility.UrlEncode(theSecondResponse.Poster);
-            theImageDetail.endPoint = theImageDetail.key + theImageDetail.theUrl + theImageDetail.responseType;
-            ImageDetail imageResponse = theImageDetail.makeRequest();
-            if (imageResponse.FileType != null)
-                outputImageInformation("File Type: " + imageResponse.FileType + "\n");
-            if (imageResponse.FileTypeExtension != null)
-                outputImageInformation("File Type Extension: " + imageResponse.FileTypeExtension + "\n");
-            if (imageResponse.MIMEType != null)
-                outputImageInformation("MIME Type: " + imageResponse.MIMEType + "\n");
-            outputImageInformation("JFIF Version: " + imageResponse.JFIFVersion + "\n");
-            outputImageInformation("Image Resolution: " + imageResponse.XResolution + "x" + imageResponse.YResolution + "\n");
-            outputImageInformation("Resolution Unit: " + imageResponse.ResolutionUnit + "\n");
-            if (imageResponse.ProfileCMMType != null)
-                outputImageInformation("Profile CMM Type: " + imageResponse.ProfileCMMType + "\n");
-            if (imageResponse.ProfileVersion != null)
-                outputImageInformation("Profile Version: " + imageResponse.ProfileVersion + "\n");
-            if (imageResponse.ProfileClass != null)
-                outputImageInformation("Profile Class: " + imageResponse.ProfileClass + "\n");
-            if (imageResponse.ColorSpaceData != null)
-                outputImageInformation("Color Space Data: " + imageResponse.ColorSpaceData + "\n");
-            if (imageResponse.ProfileConnectionSpace != null)
-                outputImageInformation("Profile Connection Space: " + imageResponse.ProfileConnectionSpace + "\n");
-            if (imageResponse.ProfileDateTime != null)
-                outputImageInformation("Profile Date Time: " + imageResponse.ProfileDateTime + "\n");
-            if (imageResponse.ProfileFileSignature != null)
-                outputImageInformation("Profile File Signature" + imageResponse.ProfileFileSignature + "\n");
-            if (imageResponse.PrimaryPlatform != null)
-                outputImageInformation("Primary Platform" + imageResponse.PrimaryPlatform + "\n");
-            if (imageResponse.CMMFlags != null)
-                outputImageInformation("CMMFlags: " + imageResponse.CMMFlags + "\n");
-            if (imageResponse.DeviceManufacturer != null)
-                outputImageInformation("Device Manufacturer: " + imageResponse.DeviceManufacturer + "\n");
-            if (imageResponse.DeviceModel != null)
-                outputImageInformation("Device Model: " + imageResponse.DeviceModel + "\n");
-            if (imageResponse.DeviceAttributes != null)
-                outputImageInformation("Device Attributes: " + imageResponse.DeviceAttributes + "\n");
-            if (imageResponse.RenderingIntent != null)
-                outputImageInformation("Rendering Intent: " + imageResponse.RenderingIntent + "\n");
-            if (imageResponse.ConnectionSpaceIlluminant != null)
-                outputImageInformation("Connection Space Illuminant: " + imageResponse.ConnectionSpaceIlluminant + "\n");
-            if (imageResponse.ProfileCreator != null)
-                outputImageInformation("Profile Creator: " + imageResponse.ProfileCreator + "\n");
-            outputImageInformation("Profile ID: " + imageResponse.ProfileID + "\n");
-            if (imageResponse.ProfileCopyright != null)
-                outputImageInformation("Profile Copyright: " + imageResponse.ProfileCopyright + "\n");
-            if (imageResponse.ProfileDescription != null)
-                outputImageInformation("Profile Description: " + imageResponse.ProfileDescription + "\n");
-            if (imageResponse.MediaWhitePoint != null)
-                outputImageInformation("Media White Point: " + imageResponse.MediaWhitePoint + "\n");
-            if (imageResponse.MediaBlackPoint != null)
-                outputImageInformation("Media Black Point: " + imageResponse.MediaBlackPoint + "\n");
-            if (imageResponse.RedMatrixColumn != null)
-                outputImageInformation("Red Matrix Column: " + imageResponse.RedMatrixColumn + "\n");
-            if (imageResponse.GreenMatrixColumn != null)
-                outputImageInformation("Green Matrix Column: " + imageResponse.GreenMatrixColumn + "\n");
-            if (imageResponse.BlueMatrixColumn != null)
-                outputImageInformation("Blue Matrix Column: " + imageResponse.BlueMatrixColumn + "\n");
-            outputImageInformation("Image Width: " + imageResponse.ImageWidth + "\n");
-            outputImageInformation("Image Height: " + imageResponse.ImageHeight + "\n");
-            outputImageInformation("Image Size: " + imageResponse.ImageSize + "\n");
-            outputImageInformation("Megapixels: " + imageResponse.Megapixels + "\n");
-            if (imageResponse.EncodingProcess != null)
-                outputImageInformation("Encoding Process: " + imageResponse.EncodingProcess + "\n");
-            outputImageInformation("Bits Per Sample: " + imageResponse.BitsPerSample + "\n");
-            outputImageInformation("Color components: " + imageResponse.ColorComponents + "\n");
-            if (imageResponse.YCbCrSubSampling != null)
-                outputImageInformation("YCbCrSubSampling: " + imageResponse.YCbCrSubSampling + "\n");
+            if (theSecondResponse.Poster != null && theSecondResponse.Poster != "N/A")
+            {
+                outputImage(theSecondResponse.Poster);
+                theImageDetail.theUrl = System.Net.WebUtility.UrlEncode(theSecondResponse.Poster);
+                theImageDetail.endPoint = theImageDetail.key + theImageDetail.theUrl + theImageDetail.responseType;
+                ImageDetail imageResponse = theImageDetail.makeRequest();
+                if (imageResponse.FileType != null)
+                    outputImageInformation("File Type: " + imageResponse.FileType + "\n");
+                if (imageResponse.FileTypeExtension != null)
+                    outputImageInformation("File Type Extension: " + imageResponse.FileTypeExtension + "\n");
+                if (imageResponse.MIMEType != null)
+                    outputImageInformation("MIME Type: " + imageResponse.MIMEType + "\n");
+                outputImageInformation("JFIF Version: " + imageResponse.JFIFVersion + "\n");
+                outputImageInformation("Image Resolution: " + imageResponse.XResolution + "x" + imageResponse.YResolution + "\n");
+                outputImageInformation("Resolution Unit: " + imageResponse.ResolutionUnit + "\n");
+                if (imageResponse.ProfileCMMType != null)
+                    outputImageInformation("Profile CMM Type: " + imageResponse.ProfileCMMType + "\n");
+                if (imageResponse.ProfileVersion != null)
+                    outputImageInformation("Profile Version: " + imageResponse.ProfileVersion + "\n");
+                if (imageResponse.ProfileClass != null)
+                    outputImageInformation("Profile Class: " + imageResponse.ProfileClass + "\n");
+                if (imageResponse.ColorSpaceData != null)
+                    outputImageInformation("Color Space Data: " + imageResponse.ColorSpaceData + "\n");
+                if (imageResponse.ProfileConnectionSpace != null)
+                    outputImageInformation("Profile Connection Space: " + imageResponse.ProfileConnectionSpace + "\n");
+                if (imageResponse.ProfileDateTime != null)
+                    outputImageInformation("Profile Date Time: " + imageResponse.ProfileDateTime + "\n");
+                if (imageResponse.ProfileFileSignature != null)
+                    outputImageInformation("Profile File Signature" + imageResponse.ProfileFileSignature + "\n");
+                if (imageResponse.PrimaryPlatform != null)
+                    outputImageInformation("Primary Platform" + imageResponse.PrimaryPlatform + "\n");
+                if (imageResponse.CMMFlags != null)
+                    outputImageInformation("CMMFlags: " + imageResponse.CMMFlags + "\n");
+                if (imageResponse.DeviceManufacturer != null)
+                    outputImageInformation("Device Manufacturer: " + imageResponse.DeviceManufacturer + "\n");
+                if (imageResponse.DeviceModel != null)
+                    outputImageInformation("Device Model: " + imageResponse.DeviceModel + "\n");
+                if (imageResponse.DeviceAttributes != null)
+                    outputImageInformation("Device Attributes: " + imageResponse.DeviceAttributes + "\n");
+                if (imageResponse.RenderingIntent != null)
+                    outputImageInformation("Rendering Intent: " + imageResponse.RenderingIntent + "\n");
+                if (imageResponse.ConnectionSpaceIlluminant != null)
+                    outputImageInformation("Connection Space Illuminant: " + imageResponse.ConnectionSpaceIlluminant + "\n");
+                if (imageResponse.ProfileCreator != null)
+                    outputImageInformation("Profile Creator: " + imageResponse.ProfileCreator + "\n");
+                outputImageInformation("Profile ID: " + imageResponse.ProfileID + "\n");
+                if (imageResponse.ProfileCopyright != null)
+                    outputImageInformation("Profile Copyright: " + imageResponse.ProfileCopyright + "\n");
+                if (imageResponse.ProfileDescription != null)
+                    outputImageInformation("Profile Description: " + imageResponse.ProfileDescription + "\n");
+                if (imageResponse.MediaWhitePoint != null)
+                    outputImageInformation("Media White Point: " + imageResponse.MediaWhitePoint + "\n");
+                if (imageResponse.MediaBlackPoint != null)
+                    outputImageInformation("Media Black Point: " + imageResponse.MediaBlackPoint + "\n");
+                if (imageResponse.RedMatrixColumn != null)
+                    outputImageInformation("Red Matrix Column: " + imageResponse.RedMatrixColumn + "\n");
+                if (imageResponse.GreenMatrixColumn != null)
+                    outputImageInformation("Green Matrix Column: " + imageResponse.GreenMatrixColumn + "\n");
+                if (imageResponse.BlueMatrixColumn != null)
+                    outputImageInformation("Blue Matrix Column: " + imageResponse.BlueMatrixColumn + "\n");
+                outputImageInformation("Image Width: " + imageResponse.ImageWidth + "\n");
+                outputImageInformation("Image Height: " + imageResponse.ImageHeight + "\n");
+                outputImageInformation("Image Size: " + imageResponse.ImageSize + "\n");
+                outputImageInformation("Megapixels: " + imageResponse.Megapixels + "\n");
+                if (imageResponse.EncodingProcess != null)
+                    outputImageInformation("Encoding Process: " + imageResponse.EncodingProcess + "\n");
+                outputImageInformation("Bits Per Sample: " + imageResponse.BitsPerSample + "\n");
+                outputImageInformation("Color components: " + imageResponse.ColorComponents + "\n");
+                if (imageResponse.YCbCrSubSampling != null)
+                    outputImageInformation("YCbCrSubSampling: " + imageResponse.YCbCrSubSampling + "\n");
+            }
         }
 
         private void debugOutput(string theOutputText)
