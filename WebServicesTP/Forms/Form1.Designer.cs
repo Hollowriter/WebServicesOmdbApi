@@ -39,6 +39,11 @@
             this.listResponse = new System.Windows.Forms.ListBox();
             this.listType = new System.Windows.Forms.ListBox();
             this.listYear = new System.Windows.Forms.ListBox();
+            this.PageIndicator = new System.Windows.Forms.TextBox();
+            this.GoLeft = new System.Windows.Forms.Button();
+            this.GoRight = new System.Windows.Forms.Button();
+            this.GoToLastPage = new System.Windows.Forms.Button();
+            this.GoToFirstPage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textTitle
@@ -137,11 +142,60 @@
             this.listYear.TabIndex = 11;
             this.listYear.SelectedIndexChanged += new System.EventHandler(this.listYear_SelectedIndexChanged_1);
             // 
+            // PageIndicator
+            // 
+            this.PageIndicator.Location = new System.Drawing.Point(149, 286);
+            this.PageIndicator.Name = "PageIndicator";
+            this.PageIndicator.Size = new System.Drawing.Size(43, 20);
+            this.PageIndicator.TabIndex = 12;
+            // 
+            // GoLeft
+            // 
+            this.GoLeft.Location = new System.Drawing.Point(112, 284);
+            this.GoLeft.Name = "GoLeft";
+            this.GoLeft.Size = new System.Drawing.Size(31, 23);
+            this.GoLeft.TabIndex = 13;
+            this.GoLeft.Text = "<";
+            this.GoLeft.UseVisualStyleBackColor = true;
+            // 
+            // GoRight
+            // 
+            this.GoRight.Location = new System.Drawing.Point(198, 284);
+            this.GoRight.Name = "GoRight";
+            this.GoRight.Size = new System.Drawing.Size(31, 23);
+            this.GoRight.TabIndex = 14;
+            this.GoRight.Text = ">";
+            this.GoRight.UseVisualStyleBackColor = true;
+            // 
+            // GoToLastPage
+            // 
+            this.GoToLastPage.Location = new System.Drawing.Point(235, 283);
+            this.GoToLastPage.Name = "GoToLastPage";
+            this.GoToLastPage.Size = new System.Drawing.Size(31, 23);
+            this.GoToLastPage.TabIndex = 15;
+            this.GoToLastPage.Text = ">>";
+            this.GoToLastPage.UseVisualStyleBackColor = true;
+            // 
+            // GoToFirstPage
+            // 
+            this.GoToFirstPage.Location = new System.Drawing.Point(75, 283);
+            this.GoToFirstPage.Name = "GoToFirstPage";
+            this.GoToFirstPage.Size = new System.Drawing.Size(31, 23);
+            this.GoToFirstPage.TabIndex = 16;
+            this.GoToFirstPage.Text = "<<";
+            this.GoToFirstPage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.GoToFirstPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 422);
+            this.Controls.Add(this.GoToFirstPage);
+            this.Controls.Add(this.GoToLastPage);
+            this.Controls.Add(this.GoRight);
+            this.Controls.Add(this.GoLeft);
+            this.Controls.Add(this.PageIndicator);
             this.Controls.Add(this.listYear);
             this.Controls.Add(this.listType);
             this.Controls.Add(this.listResponse);
@@ -173,6 +227,11 @@
         private System.Windows.Forms.ListBox listResponse;
         private System.Windows.Forms.ListBox listType;
         private System.Windows.Forms.ListBox listYear;
+        private System.Windows.Forms.TextBox PageIndicator;
+        private System.Windows.Forms.Button GoLeft;
+        private System.Windows.Forms.Button GoRight;
+        private System.Windows.Forms.Button GoToLastPage;
+        private System.Windows.Forms.Button GoToFirstPage;
     }
 }
 

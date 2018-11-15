@@ -15,18 +15,23 @@ namespace Forms
     {
         Movie theResponse;
         bool showing;
+        int page;
+        int maximumPage;
+        string firstCall;
         public Form1()
         {
             InitializeComponent();
             theResponse = null;
+            firstCall = null;
             showing = false;
+            page = 0;
+            maximumPage = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             RestClientClass rClient = new RestClientClass();
             theResponse = null;
-            listResponse.Items.Clear();
             rClient.title = null;
             rClient.type = null;
             rClient.year = null;
@@ -56,11 +61,28 @@ namespace Forms
             }
             theResponse = rClient.makeRequest();
             // textResponse.Clear();
+            PageIndicator.Clear();
             listResponse.Items.Clear();
             listType.Items.Clear();
             listYear.Items.Clear();
-           for (int i = 0; i < theResponse.Search.Length; i++)
+            int totalResults = Convert.ToInt32(theResponse.totalResults);
+            int numberOfElements = 0;
+            for (int p = 0; p < totalResults; p++)
             {
+                numberOfElements++;
+                if (numberOfElements == theResponse.Search.Length)
+                {
+                    numberOfElements = 0;
+                    maximumPage++;
+                }
+                if (numberOfElements != theResponse.Search.Length && p == totalResults - 1)
+                {
+                    numberOfElements = 0;
+                    maximumPage++;
+                }
+            }
+           for (int i = 0; i < theResponse.Search.Length; i++)
+           {
                 listResponse.Items.Add(theResponse.Search[i].Title);
                 listType.Items.Add(theResponse.Search[i].Type);
                 listYear.Items.Add(theResponse.Search[i].Year);
@@ -68,24 +90,28 @@ namespace Forms
                 debugOutput("Type: " + theResponse.Search[i].Type + '\n');
                 debugOutput("Year: " + theResponse.Search[i].Year + '\n');
                 debugOutput(" " + '\n');*/
-            }
+           }
+            debugOutput("1");
+            /*maximumPage = 
+            firstCall = rClient.endPoint;*/
         }
 
-        /*private void debugOutput(string theOutputText)
+        private void debugOutput(string theOutputText)
         {
-            textResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; 
+            // textResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; 
             try
             {
                 System.Diagnostics.Debug.Write(theOutputText + Environment.NewLine);
-                textResponse.Text = textResponse.Text + theOutputText + Environment.NewLine;
-                textResponse.SelectionStart = textResponse.TextLength;
-                textResponse.ScrollToCaret();
+                //PageIndicator
+                PageIndicator.Text = PageIndicator.Text + theOutputText + Environment.NewLine;
+                PageIndicator.SelectionStart = PageIndicator.TextLength;
+                PageIndicator.ScrollToCaret();
             }
             catch(Exception ex)
             {
                 System.Diagnostics.Debug.Write(ex.Message, ToString() + Environment.NewLine);
             }
-        }*/
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
