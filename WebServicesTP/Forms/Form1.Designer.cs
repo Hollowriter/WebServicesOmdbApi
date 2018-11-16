@@ -157,6 +157,7 @@
             this.GoLeft.TabIndex = 13;
             this.GoLeft.Text = "<";
             this.GoLeft.UseVisualStyleBackColor = true;
+            this.GoLeft.Click += new System.EventHandler(this.GoLeft_Click);
             // 
             // GoRight
             // 
@@ -166,6 +167,7 @@
             this.GoRight.TabIndex = 14;
             this.GoRight.Text = ">";
             this.GoRight.UseVisualStyleBackColor = true;
+            this.GoRight.Click += new System.EventHandler(this.GoRight_Click);
             // 
             // GoToLastPage
             // 
@@ -175,6 +177,7 @@
             this.GoToLastPage.TabIndex = 15;
             this.GoToLastPage.Text = ">>";
             this.GoToLastPage.UseVisualStyleBackColor = true;
+            this.GoToLastPage.Click += new System.EventHandler(this.GoToLastPage_Click);
             // 
             // GoToFirstPage
             // 
@@ -185,6 +188,7 @@
             this.GoToFirstPage.Text = "<<";
             this.GoToFirstPage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.GoToFirstPage.UseVisualStyleBackColor = true;
+            this.GoToFirstPage.Click += new System.EventHandler(this.GoToFirstPage_Click);
             // 
             // Form1
             // 

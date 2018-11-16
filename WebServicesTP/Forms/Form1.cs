@@ -18,6 +18,7 @@ namespace Forms
         int page;
         int maximumPage;
         string firstCall;
+        RestClientClass rClient = new RestClientClass();
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +27,15 @@ namespace Forms
             showing = false;
             page = 0;
             maximumPage = 0;
+            GoRight.Enabled = false;
+            GoLeft.Enabled = false;
+            GoToFirstPage.Enabled = false;
+            GoToLastPage.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RestClientClass rClient = new RestClientClass();
+            //RestClientClass rClient = new RestClientClass();
             theResponse = null;
             rClient.title = null;
             rClient.type = null;
@@ -60,7 +65,7 @@ namespace Forms
                 rClient.endPoint = rClient.key + rClient.title + rClient.type + rClient.year;
             }
             theResponse = rClient.makeRequest();
-            // textResponse.Clear();
+            firstCall = rClient.endPoint;
             PageIndicator.Clear();
             listResponse.Items.Clear();
             listType.Items.Clear();
@@ -70,39 +75,37 @@ namespace Forms
             for (int p = 0; p < totalResults; p++)
             {
                 numberOfElements++;
-                if (numberOfElements == theResponse.Search.Length)
-                {
-                    numberOfElements = 0;
-                    maximumPage++;
-                }
                 if (numberOfElements != theResponse.Search.Length && p == totalResults - 1)
                 {
                     numberOfElements = 0;
                     maximumPage++;
                 }
-            }
+                if (numberOfElements == theResponse.Search.Length)
+                {
+                    numberOfElements = 0;
+                    maximumPage++;
+                }
+           }
+           page = 1;
+           if (page != maximumPage)
+           {
+               GoRight.Enabled = true;
+               GoToLastPage.Enabled = true;
+           }
            for (int i = 0; i < theResponse.Search.Length; i++)
            {
                 listResponse.Items.Add(theResponse.Search[i].Title);
                 listType.Items.Add(theResponse.Search[i].Type);
                 listYear.Items.Add(theResponse.Search[i].Year);
-                /*debugOutput("Title: " + theResponse.Search[i].Title + '\n');
-                debugOutput("Type: " + theResponse.Search[i].Type + '\n');
-                debugOutput("Year: " + theResponse.Search[i].Year + '\n');
-                debugOutput(" " + '\n');*/
            }
             debugOutput("1");
-            /*maximumPage = 
-            firstCall = rClient.endPoint;*/
         }
 
         private void debugOutput(string theOutputText)
         {
-            // textResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; 
             try
             {
                 System.Diagnostics.Debug.Write(theOutputText + Environment.NewLine);
-                //PageIndicator
                 PageIndicator.Text = PageIndicator.Text + theOutputText + Environment.NewLine;
                 PageIndicator.SelectionStart = PageIndicator.TextLength;
                 PageIndicator.ScrollToCaret();
@@ -194,6 +197,170 @@ namespace Forms
             {
                 listType.SelectedIndex = listYear.SelectedIndex;
                 listResponse.SelectedIndex = listYear.SelectedIndex;
+            }
+        }
+
+        private void GoRight_Click(object sender, EventArgs e)
+        {
+            if (page != maximumPage)
+            {
+                page++;
+                PageIndicator.Clear();
+                listResponse.Items.Clear();
+                listType.Items.Clear();
+                listYear.Items.Clear();
+                rClient.endPoint = firstCall + "&page=" + page;
+                theResponse = rClient.makeRequest();
+                for (int i = 0; i < theResponse.Search.Length; i++)
+                {
+                    listResponse.Items.Add(theResponse.Search[i].Title);
+                    listType.Items.Add(theResponse.Search[i].Type);
+                    listYear.Items.Add(theResponse.Search[i].Year);
+                }
+                debugOutput(page.ToString());
+            }
+            if (page == maximumPage)
+            {
+                GoRight.Enabled = false;
+                GoToLastPage.Enabled = false;
+            }
+            else
+            {
+                GoRight.Enabled = true;
+                GoToLastPage.Enabled = true;
+            }
+            if (page == 1)
+            {
+                GoLeft.Enabled = false;
+                GoToFirstPage.Enabled = false;
+            }
+            else
+            {
+                GoLeft.Enabled = true;
+                GoToFirstPage.Enabled = true;
+            }
+        }
+
+        private void GoLeft_Click(object sender, EventArgs e)
+        {
+            if (page != 1)
+            {
+                page--;
+                PageIndicator.Clear();
+                listResponse.Items.Clear();
+                listType.Items.Clear();
+                listYear.Items.Clear();
+                rClient.endPoint = firstCall + "&page=" + page;
+                theResponse = rClient.makeRequest();
+                for (int i = 0; i < theResponse.Search.Length; i++)
+                {
+                    listResponse.Items.Add(theResponse.Search[i].Title);
+                    listType.Items.Add(theResponse.Search[i].Type);
+                    listYear.Items.Add(theResponse.Search[i].Year);
+                }
+                debugOutput(page.ToString());
+            }
+            if (page == 1)
+            {
+                GoLeft.Enabled = false;
+                GoToFirstPage.Enabled = false;
+            }
+            else
+            {
+                GoLeft.Enabled = true;
+                GoToFirstPage.Enabled = true;
+            }
+            if (page == maximumPage)
+            {
+                GoRight.Enabled = false;
+                GoToLastPage.Enabled = false;
+            }
+            else
+            {
+                GoRight.Enabled = true;
+                GoToLastPage.Enabled = true;
+            }
+        }
+
+        private void GoToLastPage_Click(object sender, EventArgs e)
+        {
+            if (page != maximumPage)
+            {
+                page = maximumPage;
+                PageIndicator.Clear();
+                listResponse.Items.Clear();
+                listType.Items.Clear();
+                listYear.Items.Clear();
+                rClient.endPoint = firstCall + "&page=" + page;
+                theResponse = rClient.makeRequest();
+                for (int i = 0; i < theResponse.Search.Length; i++)
+                {
+                    listResponse.Items.Add(theResponse.Search[i].Title);
+                    listType.Items.Add(theResponse.Search[i].Type);
+                    listYear.Items.Add(theResponse.Search[i].Year);
+                }
+                debugOutput(page.ToString());
+            }
+            if (page == maximumPage)
+            {
+                GoRight.Enabled = false;
+                GoToLastPage.Enabled = false;
+            }
+            else
+            {
+                GoRight.Enabled = true;
+                GoToLastPage.Enabled = true;
+            }
+            if (page == 1)
+            {
+                GoLeft.Enabled = false;
+                GoToFirstPage.Enabled = false;
+            }
+            else
+            {
+                GoLeft.Enabled = true;
+                GoToFirstPage.Enabled = true;
+            }
+        }
+
+        private void GoToFirstPage_Click(object sender, EventArgs e)
+        {
+            if (page != 1)
+            {
+                page = 1;
+                PageIndicator.Clear();
+                listResponse.Items.Clear();
+                listType.Items.Clear();
+                listYear.Items.Clear();
+                rClient.endPoint = firstCall + "&page=" + page;
+                theResponse = rClient.makeRequest();
+                for (int i = 0; i < theResponse.Search.Length; i++)
+                {
+                    listResponse.Items.Add(theResponse.Search[i].Title);
+                    listType.Items.Add(theResponse.Search[i].Type);
+                    listYear.Items.Add(theResponse.Search[i].Year);
+                }
+                debugOutput(page.ToString());
+            }
+            if (page == 1)
+            {
+                GoLeft.Enabled = false;
+                GoToFirstPage.Enabled = false;
+            }
+            else
+            {
+                GoLeft.Enabled = true;
+                GoToFirstPage.Enabled = true;
+            }
+            if (page == maximumPage)
+            {
+                GoRight.Enabled = false;
+                GoToLastPage.Enabled = false;
+            }
+            else
+            {
+                GoRight.Enabled = true;
+                GoToLastPage.Enabled = true;
             }
         }
     }
