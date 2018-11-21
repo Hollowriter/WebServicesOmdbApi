@@ -44,6 +44,8 @@
             this.GoRight = new System.Windows.Forms.Button();
             this.GoToLastPage = new System.Windows.Forms.Button();
             this.GoToFirstPage = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textTitle
@@ -190,11 +192,31 @@
             this.GoToFirstPage.UseVisualStyleBackColor = true;
             this.GoToFirstPage.Click += new System.EventHandler(this.GoToFirstPage_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(369, 24);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(168, 21);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(338, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Plot";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 422);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.GoToFirstPage);
             this.Controls.Add(this.GoToLastPage);
             this.Controls.Add(this.GoRight);
@@ -236,6 +258,8 @@
         private System.Windows.Forms.Button GoRight;
         private System.Windows.Forms.Button GoToLastPage;
         private System.Windows.Forms.Button GoToFirstPage;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

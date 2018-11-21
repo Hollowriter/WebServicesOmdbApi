@@ -31,10 +31,12 @@ namespace Forms
             GoLeft.Enabled = false;
             GoToFirstPage.Enabled = false;
             GoToLastPage.Enabled = false;
+            comboBox1.Items.AddRange(new object[] { "short", "full" });
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            maximumPage = 0;
             //RestClientClass rClient = new RestClientClass();
             theResponse = null;
             rClient.title = null;
@@ -71,21 +73,7 @@ namespace Forms
             listType.Items.Clear();
             listYear.Items.Clear();
             int totalResults = Convert.ToInt32(theResponse.totalResults);
-            int numberOfElements = 0;
-            for (int p = 0; p < totalResults; p++)
-            {
-                numberOfElements++;
-                if (numberOfElements != theResponse.Search.Length && p == totalResults - 1)
-                {
-                    numberOfElements = 0;
-                    maximumPage++;
-                }
-                if (numberOfElements == theResponse.Search.Length)
-                {
-                    numberOfElements = 0;
-                    maximumPage++;
-                }
-           }
+            maximumPage = (int)Math.Ceiling((double) totalResults / theResponse.Search.Length);
            page = 1;
            if (page != maximumPage)
            {
@@ -134,7 +122,14 @@ namespace Forms
                 Form2 cosito = new Form2();
                 listType.SelectedIndex = listResponse.SelectedIndex;
                 listYear.SelectedIndex = listResponse.SelectedIndex;
-                cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString());
+                if (comboBox1.SelectedItem == null)
+                {
+                    cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString());
+                }
+                else
+                {
+                    cosito.ShowSelection(theResponse.Search[listResponse.SelectedIndex].Title.ToString() + "&plot=" + comboBox1.SelectedItem.ToString());
+                }
                 cosito.ShowDialog();
                 showing = false;
             }
@@ -170,7 +165,14 @@ namespace Forms
                 Form2 cosito = new Form2();
                 listResponse.SelectedIndex = listType.SelectedIndex;
                 listYear.SelectedIndex = listType.SelectedIndex;
-                cosito.ShowSelection(theResponse.Search[listType.SelectedIndex].Title.ToString());
+                if (comboBox1.SelectedItem == null)
+                {
+                    cosito.ShowSelection(theResponse.Search[listType.SelectedIndex].Title.ToString());
+                }
+                else
+                {
+                    cosito.ShowSelection(theResponse.Search[listType.SelectedIndex].Title.ToString() + "&plot=" + comboBox1.SelectedItem.ToString());
+                }
                 cosito.ShowDialog();
                 showing = false;
             }
@@ -189,7 +191,14 @@ namespace Forms
                 Form2 cosito = new Form2();
                 listType.SelectedIndex = listYear.SelectedIndex;
                 listResponse.SelectedIndex = listYear.SelectedIndex;
-                cosito.ShowSelection(theResponse.Search[listYear.SelectedIndex].Title.ToString());
+                if (comboBox1.SelectedItem == null)
+                {
+                    cosito.ShowSelection(theResponse.Search[listYear.SelectedIndex].Title.ToString());
+                }
+                else
+                {
+                    cosito.ShowSelection(theResponse.Search[listYear.SelectedIndex].Title.ToString() + "&plot=" + comboBox1.SelectedItem.ToString());
+                }
                 cosito.ShowDialog();
                 showing = false;
             }
@@ -362,6 +371,11 @@ namespace Forms
                 GoRight.Enabled = true;
                 GoToLastPage.Enabled = true;
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
